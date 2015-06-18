@@ -18,7 +18,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 ### Assumptions
 The script makes the following assumptions:
-* The UCI HAR zip file has been downloaded
+* The UCI HAR Dataset zip file has been downloaded
 * The zip file has been extracted into the "UCI HAR Dataset" folder under the project folder
 * The "UCI HAR Dataset" folder has retained the folder structure present in the zip file
 
