@@ -9,6 +9,7 @@ The script makes the following assumptions:
 * The "UCI HAR Dataset" folder has retained the folder structure present in the zip file
 
 The process flow is as follows:
+
 1. Read features.txt into "features"
 2. Convert features from a data frame to a character vector - "charFeatures"
 3. Use make.names to ensure that the names will be valid column names and are unique
