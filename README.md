@@ -30,8 +30,8 @@ The process flow is as follows:
 12. Merge the training and test data using rbind put into "completeData"
 13. Use grep to identify columns whose names contain "mean" or "std" put column numbers into "cols"
 14. Add the column numbers for subject and activity to "cols"
-15. Subset "completeData" using cols to extract the columns of interest put into "filtered"
-16. Convert column 1 of "filtered" into a factor, set the levels to "charactivities" created in step 6
+15. Subset "completeData" using "cols" to extract the columns of interest, put into "filtered"
+16. Convert column 1 of "filtered" into a factor, set the levels to "charActivities" created in step 6
 17. Set the column names of "filtered" to the subset of the complete set of column names using "cols" again
 18. Create the tidy dataset, "tidy", using ddply on "filtered". Group by subject and activity, calculate the mean of the other columns
 19. Write "tidy" to tidy_data.txt in the project folder using write.table (row.names=FALSE)
