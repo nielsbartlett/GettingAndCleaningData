@@ -20,12 +20,12 @@ The process flow is as follows:
   1. X_train.txt into "trainData"
   2. y_train.txt into "trainActivityData"
   3. subject_train.txt into "trainSubjectData"
-8. Add subject and activity data to "trainData" using cbind
+8. Add training subject and activity data to "trainData" using cbind
 9. Read the test data:
   1. X_test.txt into "testData"
   2. y_test.txt into "testActivityData"
   3. subject_test.txt into "testSubjectData"
-10. Add subject and activity data to "testData" using cbind
+10. Add test subject and activity data to "testData" using cbind
 11. Add subject and activity column names to "charFeatures"
 12. Merge the training and test data using rbind put into "completeData"
 13. Use grep to identify columns whose names contain "mean" or "std" put column numbers into "cols"
