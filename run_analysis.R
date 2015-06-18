@@ -65,7 +65,7 @@
   tidy <- ddply(filtered, c("activity", "subject"), numcolwise(mean))
 
   ## finally, save the tidy data to file
-  write.table(tidy, paste0(rootPath, "/tidy_data.txt"), append=FALSE, row.names=FALSE)
+  write.table(tidy, "tidy_data.txt", append=FALSE, row.names=FALSE)
   
   
   
