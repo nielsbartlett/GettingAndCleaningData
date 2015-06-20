@@ -2,7 +2,10 @@
 
 ### Outline
 
-From the course notes:
+The course project notes can be found here:
+https://class.coursera.org/getdata-015/human_grading/view/courses/973502/assessments/3/submissions
+
+From the course project notes:
 "One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
@@ -45,7 +48,7 @@ The script makes use of the plyr package and this package must be installed.
 If the plyr package is not already installed then intall it using:
 install_packages("plyr")
 
-The dataset files are assumed to be in a child folder of the working folder names "UCI HAR Dataset".
+The dataset files are assumed to be in a child folder of the working folder names "UCI HAR Dataset". If not present then they should be downloaded, extracted and put in the required folder.
 The dataset files are assumed to be in the same folder structure as is present in the zip file.
 
 ### Variables
