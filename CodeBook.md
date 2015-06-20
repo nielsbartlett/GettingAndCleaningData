@@ -32,20 +32,44 @@ The unzipped dataset files, present in the "UCI HAR Dataset" folder are made up 
 | ------------- |:------:|
 | activity_labels.txt | The list of activities e.g. WALKING, WALKING_UPSTAIRS etc. |
 | features.txt | The list of data column names |
-| test/X_test.txt | The main test dataset (2947 obs of 563 rows) |
-| test/y_test.txt | Activities for each test row (2947 obs of 1 row) |
-| test/subject_test.txt | Subject for each test row (2947 obs of 1 row) |
-| train/X_train.txt | The main training dataset (7352 obs of 563 rows) |
-| train/y_train.txt | Activities for each training row (7352 obs of 1 row) |
-| train/subject_train.txt | Subject for each training row (7352 obs of 1 row) |
+| test/X_test.txt | The main test dataset (2947 obs of 563 variables) |
+| test/y_test.txt | Activities for each test row (2947 obs of 1 variable) |
+| test/subject_test.txt | Subject for each test row (2947 obs of 1 variable) |
+| train/X_train.txt | The main training dataset (7352 obs of 563 variables) |
+| train/y_train.txt | Activities for each training row (7352 obs of 1 variable) |
+| train/subject_train.txt | Subject for each training row (7352 obs of 1 variable) |
 
+### Requirements to run the run_analysis.R script
 
+The script makes use of the plyr package and this package must be installed.
+If the plyr package is not already installed then intall it using:
+install_packages("plyr")
+
+The dataset files are assumed to be in a child folder of the working folder names "UCI HAR Dataset".
+The dataset files are assumed to be in the same folder structure as is present in the zip file.
 
 ### Variables
 
+Activity data is one of the following: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING".
+Subject data is comprised of integer values in the range 1 to 30.
+
+The main dataset made up of 563 variables was filtered resulting in a reduced dataset of 88 variables.
+This is the complete list of the resulting variables:
+
+tBodyAcc_mean___X, tBodyAcc_mean___Y, tBodyAcc_mean___Z, tBodyAcc_std___X, tBodyAcc_std___Y, tBodyAcc_std___Z, tGravityAcc_mean___X, tGravityAcc_mean___Y, tGravityAcc_mean___Z, tGravityAcc_std___X, tGravityAcc_std___Y, tGravityAcc_std___Z, tBodyAccJerk_mean___X, tBodyAccJerk_mean___Y, tBodyAccJerk_mean___Z, tBodyAccJerk_std___X, tBodyAccJerk_std___Y, tBodyAccJerk_std___Z, tBodyGyro_mean___X, tBodyGyro_mean___Y, tBodyGyro_mean___Z, tBodyGyro_std___X, tBodyGyro_std___Y, tBodyGyro_std___Z, tBodyGyroJerk_mean___X, tBodyGyroJerk_mean___Y, tBodyGyroJerk_mean___Z, tBodyGyroJerk_std___X, tBodyGyroJerk_std___Y, tBodyGyroJerk_std___Z, tBodyAccMag_mean__, tBodyAccMag_std__, tGravityAccMag_mean__, tGravityAccMag_std__, tBodyAccJerkMag_mean__, tBodyAccJerkMag_std__, tBodyGyroMag_mean__, tBodyGyroMag_std__, tBodyGyroJerkMag_mean__, tBodyGyroJerkMag_std__, fBodyAcc_mean___X, fBodyAcc_mean___Y, fBodyAcc_mean___Z, fBodyAcc_std___X, fBodyAcc_std___Y, fBodyAcc_std___Z, fBodyAcc_meanFreq___X, fBodyAcc_meanFreq___Y, fBodyAcc_meanFreq___Z, fBodyAccJerk_mean___X, fBodyAccJerk_mean___Y, fBodyAccJerk_mean___Z, fBodyAccJerk_std___X, fBodyAccJerk_std___Y, fBodyAccJerk_std___Z, fBodyAccJerk_meanFreq___X, fBodyAccJerk_meanFreq___Y, fBodyAccJerk_meanFreq___Z, fBodyGyro_mean___X, fBodyGyro_mean___Y, fBodyGyro_mean___Z, fBodyGyro_std___X, fBodyGyro_std___Y, fBodyGyro_std___Z, fBodyGyro_meanFreq___X, 
+fBodyGyro_meanFreq___Y, fBodyGyro_meanFreq___Z, fBodyAccMag_mean__, fBodyAccMag_std__, fBodyAccMag_meanFreq__, fBodyBodyAccJerkMag_mean__, fBodyBodyAccJerkMag_std__, fBodyBodyAccJerkMag_meanFreq__, fBodyBodyGyroMag_mean__, fBodyBodyGyroMag_std__, fBodyBodyGyroMag_meanFreq__, fBodyBodyGyroJerkMag_mean__, fBodyBodyGyroJerkMag_std__, fBodyBodyGyroJerkMag_meanFreq__, angle_tBodyAccMean_gravity_, angle_tBodyAccJerkMean__gravityMean_, angle_tBodyGyroMean_gravityMean_, angle_tBodyGyroJerkMean_gravityMean_, angle_X_gravityMean_,  angle_Y_gravityMean_, angle_Z_gravityMean_
 
 ### Transformations
 
+The features dataset was processed to make the column names valid (using make.names).
+
+The test and train activity and subject data were merged into the appropriate main dataset and then the two datasets were merged into one complete dataset.
+
+The features dataset was filtered to identify those column names which contained "mean" or "std". The resulting list of columns was then used to filter the complete dataset to result in a dataset containing only those columns required for subsequent analysis.
+
+The ddply() function from the plyr package was used to create the mean of each column grouped by activity and subject.
+
+The resulting dataset was then written to a file named "tidy_data.txt" using write.table.
 
 ### References
 
