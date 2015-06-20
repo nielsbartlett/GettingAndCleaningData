@@ -54,6 +54,7 @@ The dataset files are assumed to be in the same folder structure as is present i
 ### Variables
 
 Activity data is one of the following: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING".
+
 Subject data is comprised of integer values in the range 1 to 30.
 
 The main dataset made up of 563 variables was filtered resulting in a reduced dataset of 88 variables.
