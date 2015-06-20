@@ -30,8 +30,15 @@ The unzipped dataset files, present in the "UCI HAR Dataset" folder are made up 
 
 | Filename | Description |
 | ------------- |:------:|
-| activity_labels.txt | The list of activities e.g. WALKING |
+| activity_labels.txt | The list of activities e.g. WALKING, WALKING_UPSTAIRS etc. |
 | features.txt | The list of data column names |
+| test/X_test.txt | The main test dataset (2947 obs of 563 rows) |
+| test/y_test.txt | Activities for each test row (2947 obs of 1 row) |
+| test/subject_test.txt | Subject for each test row (2947 obs of 1 row) |
+| train/X_train.txt | The main training dataset (7352 obs of 563 rows) |
+| train/y_train.txt | Activities for each training row (7352 obs of 1 row) |
+| train/subject_train.txt | Subject for each training row (7352 obs of 1 row) |
+
 
 
 ### Variables
