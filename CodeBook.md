@@ -1,5 +1,7 @@
 # Getting And Cleaning Data
 
+Codebook for the Coursera Geting and Cleaning Data course project.
+
 ### Outline
 
 The course project notes can be found here:
@@ -53,9 +55,9 @@ The dataset files are assumed to be in the same folder structure as is present i
 
 ### Variables
 
-Activity data is one of the following: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING".
+Activity data is one of the following: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING". This represents the activities performed by the subjects.
 
-Subject data is comprised of integer values in the range 1 to 30.
+Subject data is comprised of integer values in the range 1 to 30. This represents each of the 30 subjects involved in the experiment.
 
 The main dataset made up of 563 variables was filtered resulting in a reduced dataset of 88 variables.
 This is the complete list of the resulting variables:
